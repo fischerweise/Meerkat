@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2001D362836B754000F8BF1 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2001D352836B754000F8BF1 /* ChatUser.swift */; };
+		E2001D392836BA10000F8BF1 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2001D382836BA10000F8BF1 /* NewMessageView.swift */; };
+		E21231DC283556F400A59EC8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E21231DB283556F400A59EC8 /* FirebaseAuth */; };
+		E21231DE283556F400A59EC8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E21231DD283556F400A59EC8 /* FirebaseFirestore */; };
+		E21231E0283556F400A59EC8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E21231DF283556F400A59EC8 /* FirebaseStorage */; };
+		E21231E328355C0600A59EC8 /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21231E228355C0600A59EC8 /* MainMessagesView.swift */; };
+		E21231E628356A7100A59EC8 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21231E528356A7100A59EC8 /* FirebaseManager.swift */; };
+		E21231E92835773A00A59EC8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E21231E82835773A00A59EC8 /* SDWebImageSwiftUI */; };
+		E2910E47283407E80063F856 /* MeerkatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2910E46283407E80063F856 /* MeerkatApp.swift */; };
+		E2910E49283407E80063F856 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2910E48283407E80063F856 /* LoginView.swift */; };
+		E2910E4B283407EA0063F856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2910E4A283407EA0063F856 /* Assets.xcassets */; };
+		E2910E4E283407EA0063F856 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2910E4D283407EA0063F856 /* Preview Assets.xcassets */; };
+		E2910E5A283413170063F856 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2910E59283413170063F856 /* GoogleService-Info.plist */; };
+		E2910E5C283419930063F856 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2910E5B283419930063F856 /* ImagePicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E2001D352836B754000F8BF1 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		E2001D382836BA10000F8BF1 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		E21231E228355C0600A59EC8 /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
+		E21231E528356A7100A59EC8 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E2910E43283407E80063F856 /* Meerkat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meerkat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2910E46283407E80063F856 /* MeerkatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeerkatApp.swift; sourceTree = "<group>"; };
+		E2910E48283407E80063F856 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E2910E4A283407EA0063F856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2910E4D283407EA0063F856 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E2910E59283413170063F856 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2910E5B283419930063F856 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2910E40283407E80063F856 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E21231E92835773A00A59EC8 /* SDWebImageSwiftUI in Frameworks */,
+				E21231DC283556F400A59EC8 /* FirebaseAuth in Frameworks */,
+				E21231DE283556F400A59EC8 /* FirebaseFirestore in Frameworks */,
+				E21231E0283556F400A59EC8 /* FirebaseStorage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2001D342836B73E000F8BF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2001D352836B754000F8BF1 /* ChatUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2001D372836B9FD000F8BF1 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				E2001D382836BA10000F8BF1 /* NewMessageView.swift */,
+			);
+			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		E21231E128355BE600A59EC8 /* MainMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E2001D372836B9FD000F8BF1 /* NewMessage */,
+				E21231E228355C0600A59EC8 /* MainMessagesView.swift */,
+			);
+			path = MainMessages;
+			sourceTree = "<group>";
+		};
+		E21231E428356A6300A59EC8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E21231E528356A7100A59EC8 /* FirebaseManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E2910E3A283407E80063F856 = {
+			isa = PBXGroup;
+			children = (
+				E2910E45283407E80063F856 /* Meerkat */,
+				E2910E44283407E80063F856 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2910E44283407E80063F856 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2910E43283407E80063F856 /* Meerkat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2910E45283407E80063F856 /* Meerkat */ = {
+			isa = PBXGroup;
+			children = (
+				E2001D342836B73E000F8BF1 /* Model */,
+				E21231E428356A6300A59EC8 /* Utilities */,
+				E21231E128355BE600A59EC8 /* MainMessages */,
+				E2910E46283407E80063F856 /* MeerkatApp.swift */,
+				E2910E48283407E80063F856 /* LoginView.swift */,
+				E2910E5B283419930063F856 /* ImagePicker.swift */,
+				E2910E59283413170063F856 /* GoogleService-Info.plist */,
+				E2910E4A283407EA0063F856 /* Assets.xcassets */,
+				E2910E4C283407EA0063F856 /* Preview Content */,
+			);
+			path = Meerkat;
+			sourceTree = "<group>";
+		};
+		E2910E4C283407EA0063F856 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E2910E4D283407EA0063F856 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2910E42283407E80063F856 /* Meerkat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2910E51283407EA0063F856 /* Build configuration list for PBXNativeTarget "Meerkat" */;
+			buildPhases = (
+				E2910E3F283407E80063F856 /* Sources */,
+				E2910E40283407E80063F856 /* Frameworks */,
+				E2910E41283407E80063F856 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Meerkat;
+			packageProductDependencies = (
+				E21231DB283556F400A59EC8 /* FirebaseAuth */,
+				E21231DD283556F400A59EC8 /* FirebaseFirestore */,
+				E21231DF283556F400A59EC8 /* FirebaseStorage */,
+				E21231E82835773A00A59EC8 /* SDWebImageSwiftUI */,
+			);
+			productName = Meerkat;
+			productReference = E2910E43283407E80063F856 /* Meerkat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2910E3B283407E80063F856 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					E2910E42283407E80063F856 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E2910E3E283407E80063F856 /* Build configuration list for PBXProject "Meerkat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2910E3A283407E80063F856;
+			packageReferences = (
+				E21231DA283556F400A59EC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E21231E72835773A00A59EC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
+			productRefGroup = E2910E44283407E80063F856 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2910E42283407E80063F856 /* Meerkat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2910E41283407E80063F856 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2910E4E283407EA0063F856 /* Preview Assets.xcassets in Resources */,
+				E2910E4B283407EA0063F856 /* Assets.xcassets in Resources */,
+				E2910E5A283413170063F856 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2910E3F283407E80063F856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2001D362836B754000F8BF1 /* ChatUser.swift in Sources */,
+				E2910E5C283419930063F856 /* ImagePicker.swift in Sources */,
+				E2001D392836BA10000F8BF1 /* NewMessageView.swift in Sources */,
+				E21231E328355C0600A59EC8 /* MainMessagesView.swift in Sources */,
+				E21231E628356A7100A59EC8 /* FirebaseManager.swift in Sources */,
+				E2910E49283407E80063F856 /* LoginView.swift in Sources */,
+				E2910E47283407E80063F856 /* MeerkatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2910E4F283407EA0063F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E2910E50283407EA0063F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2910E52283407EA0063F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Meerkat/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T5Z33R245;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafapekdemir.Meerkat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2910E53283407EA0063F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Meerkat/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T5Z33R245;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mustafapekdemir.Meerkat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2910E3E283407E80063F856 /* Build configuration list for PBXProject "Meerkat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2910E4F283407EA0063F856 /* Debug */,
+				E2910E50283407EA0063F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2910E51283407EA0063F856 /* Build configuration list for PBXNativeTarget "Meerkat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2910E52283407EA0063F856 /* Debug */,
+				E2910E53283407EA0063F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E21231DA283556F400A59EC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		E21231E72835773A00A59EC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E21231DB283556F400A59EC8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21231DA283556F400A59EC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E21231DD283556F400A59EC8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21231DA283556F400A59EC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E21231DF283556F400A59EC8 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21231DA283556F400A59EC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		E21231E82835773A00A59EC8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21231E72835773A00A59EC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E2910E3B283407E80063F856 /* Project object */;
+}
