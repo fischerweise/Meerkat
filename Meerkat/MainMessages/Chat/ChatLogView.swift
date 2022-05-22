@@ -51,11 +51,15 @@ class ChatLogViewModel: ObservableObject {
                     self.chatMessages.append(.init(documentId: change.document.documentID, data: data))
                 }
             })
-//            querySnapshot?.documents.forEach({ queryDocumentSnapshot in
-//                let data = queryDocumentSnapshot.data()
-//                let docId = queryDocumentSnapshot.documentID
-//                self.chatMessages.append(.init(documentId: docId, data: data))
-//            })
+            querySnapshot?.documents.forEach({ queryDocumentSnapshot in
+                let data = queryDocumentSnapshot.data()
+                let docId = queryDocumentSnapshot.documentID
+                self.chatMessages.append(.init(documentId: docId, data: data))
+            })
+            DispatchQueue.main.async {
+                self.count += 1
+
+            }
         }
     }
     func handleSend() {
@@ -71,6 +75,7 @@ class ChatLogViewModel: ObservableObject {
             }
             print("Successfully saved current user sending message")
             self.chatText = ""
+            self.count += 1
         }
         let recipientMessageDocument = FirebaseManager.shared.firestore.collection("messages").document(toId).collection(fromId).document()
         recipientMessageDocument.setData(messageData) { error in
@@ -82,6 +87,7 @@ class ChatLogViewModel: ObservableObject {
 
         }
     }
+    @Published var count = 0
 }
 
 struct ChatLogView: View {
@@ -99,46 +105,32 @@ struct ChatLogView: View {
         }
         .navigationTitle(chatUser?.email ?? "")
         .navigationBarTitleDisplayMode(.inline)
+//        .navigationBarItems(trailing: Button(action: {
+//            viewModel.count += 1
+//        }, label: {
+//            Text("Count: \(viewModel.count)")
+//        }))
     }
+    static let emptyScrollToString = "Empty"
     private var messagesView: some View {
         ScrollView {
-            ForEach(viewModel.chatMessages) { message in
+            ScrollViewReader {
+                ScrollViewProxy in
                 VStack {
-                    if message.fromId == FirebaseManager.shared.auth.currentUser?.uid {
-                        HStack {
-                            Spacer()
-                            HStack {
-                                Text(message.text)
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding()
-                            .background(Color.green)
-                            .cornerRadius(12)
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                    } else {
-                        HStack {
-                            HStack {
-                                Text(message.text)
-                                    .foregroundColor(.black)
-                                
-                            }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            Spacer()
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                        
+                    ForEach(viewModel.chatMessages) { message in
+                        MessageView(message: message)
                     }
+                    HStack {
+                        Spacer()
+                    }
+                    .id(Self.emptyScrollToString)
                 }
-                
-            }
-            HStack {
-                Spacer()
+                .onReceive(viewModel.$count) { _ in
+                    withAnimation(.easeOut(duration: 0.5)) {
+                        ScrollViewProxy.scrollTo(Self.emptyScrollToString, anchor: .bottom)
+                    }
+                    
+                }
             }
             .frame(height: 50)
         }
@@ -175,8 +167,43 @@ struct ChatLogView: View {
         .padding(.vertical, 8)
     }
 }
-    
 
+struct MessageView: View {
+    let message: ChatMessage
+    var body: some View {
+        VStack {
+            if message.fromId == FirebaseManager.shared.auth.currentUser?.uid {
+                HStack {
+                    Spacer()
+                    HStack {
+                        Text(message.text)
+                            .foregroundColor(.white)
+                        
+                    }
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(12)
+                }
+                .padding(.horizontal)
+                .padding(.top, 8)
+            } else {
+                HStack {
+                    HStack {
+                        Text(message.text)
+                            .foregroundColor(.black)
+                        
+                    }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    Spacer()
+                }
+            }
+        }
+        .padding(.horizontal)
+        .padding(.top, 8)
+    }
+}
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
