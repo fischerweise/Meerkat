@@ -18,18 +18,6 @@ struct FirebaseConstants {
 
 }
 
-struct ChatMessage: Identifiable {
-    var id: String {documentId}
-    let documentId: String
-    let fromId, toId, text: String
-    init(documentId: String, data: [String: Any]) {
-        self.documentId = documentId
-        self.fromId = data[FirebaseConstants.fromId] as? String ?? ""
-        self.toId = data[FirebaseConstants.toId] as? String ?? ""
-        self.text = data[FirebaseConstants.text] as? String ?? ""
-    }
-}
-
 class ChatLogViewModel: ObservableObject {
     @Published var chatText = ""
     @Published var errorMessage = ""
@@ -133,33 +121,20 @@ struct ChatLogView: View {
         }
         .navigationTitle(chatUser?.email ?? "")
         .navigationBarTitleDisplayMode(.inline)
-//        .navigationBarItems(trailing: Button(action: {
-//            viewModel.count += 1
-//        }, label: {
-//            Text("Count: \(viewModel.count)")
-//        }))
+
     }
     static let emptyScrollToString = "Empty"
     private var messagesView: some View {
         ScrollView {
-            ScrollViewReader {
-                ScrollViewProxy in
                 VStack {
                     ForEach(viewModel.chatMessages) { message in
                         MessageView(message: message)
                     }
-                    HStack {
-                        Spacer()
-                    }
-                    .id(Self.emptyScrollToString)
                 }
-                .onReceive(viewModel.$count) { _ in
-                    withAnimation(.easeOut(duration: 0.5)) {
-                        ScrollViewProxy.scrollTo(Self.emptyScrollToString, anchor: .bottom)
-                    }
-                    
+                HStack {
+                    Spacer()
                 }
-            }
+
             .frame(height: 50)
         }
         .background(Color(.init(white: 0.95, alpha: 1)))
@@ -182,13 +157,13 @@ struct ChatLogView: View {
             Button {
                 viewModel.handleSend()
             } label: {
-                Text("Send")
+                Image(systemName: "paperplane.circle.fill")
                     .foregroundColor(.white)
             }
             .padding(.horizontal)
-            .padding(.vertical, 8)
-            .background(Color.green)
-            .cornerRadius(12)
+            .padding(.vertical, 10)
+            .background(Color.orange)
+            .cornerRadius(14)
             
         }
         .padding(.horizontal)
@@ -204,12 +179,12 @@ struct MessageView: View {
                 HStack {
                     Spacer()
                     HStack {
-                        Text(message.text)
+                        Text(message.text.replacingOccurrences(of: "@gmail.com", with: ""))
                             .foregroundColor(.white)
                         
                     }
                     .padding()
-                    .background(Color.green)
+                    .background(Color.orange)
                     .cornerRadius(12)
                 }
                 .padding(.horizontal)
@@ -218,11 +193,11 @@ struct MessageView: View {
                 HStack {
                     HStack {
                         Text(message.text)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                         
                     }
                     .padding()
-                    .background(Color.white)
+                    .background(Color.green)
                     .cornerRadius(12)
                     Spacer()
                 }

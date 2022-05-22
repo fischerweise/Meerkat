@@ -62,9 +62,11 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                                 .padding(.vertical, 10)
                                 .font(.system(size: 18, weight: .semibold))
+                            
                             Spacer()
                             
-                        }.background(Color.blue)
+                        }.background(Color.orange)
+                            .cornerRadius(64)
                     }
                     Text(self.loginStatusMessage)
                         .foregroundColor(.red)
@@ -72,7 +74,7 @@ struct LoginView: View {
                 .padding()
             }
             .navigationTitle(isLoginMode ? "Login" : "Create Account")
-            .background(Color(.init(white: 0, alpha: 0.05))
+            .background(Color(.init(white: 1, alpha: 0.05))
                 .ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())

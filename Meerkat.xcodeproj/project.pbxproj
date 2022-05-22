@@ -16,6 +16,8 @@
 		E21231E328355C0600A59EC8 /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21231E228355C0600A59EC8 /* MainMessagesView.swift */; };
 		E21231E628356A7100A59EC8 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21231E528356A7100A59EC8 /* FirebaseManager.swift */; };
 		E21231E92835773A00A59EC8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E21231E82835773A00A59EC8 /* SDWebImageSwiftUI */; };
+		E2212FD1283AB5F50077AC2C /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212FD0283AB5F50077AC2C /* RecentMessage.swift */; };
+		E2212FD3283AB5FB0077AC2C /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2212FD2283AB5FB0077AC2C /* ChatMessage.swift */; };
 		E2910E47283407E80063F856 /* MeerkatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2910E46283407E80063F856 /* MeerkatApp.swift */; };
 		E2910E49283407E80063F856 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2910E48283407E80063F856 /* LoginView.swift */; };
 		E2910E4B283407EA0063F856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2910E4A283407EA0063F856 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		E205341D283944170036DEEF /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		E21231E228355C0600A59EC8 /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		E21231E528356A7100A59EC8 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E2212FD0283AB5F50077AC2C /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
+		E2212FD2283AB5FB0077AC2C /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		E2910E43283407E80063F856 /* Meerkat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meerkat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2910E46283407E80063F856 /* MeerkatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeerkatApp.swift; sourceTree = "<group>"; };
 		E2910E48283407E80063F856 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				E2001D352836B754000F8BF1 /* ChatUser.swift */,
+				E2212FD0283AB5F50077AC2C /* RecentMessage.swift */,
+				E2212FD2283AB5FB0077AC2C /* ChatMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +225,8 @@
 			files = (
 				E2001D362836B754000F8BF1 /* ChatUser.swift in Sources */,
 				E205341E283944170036DEEF /* ChatLogView.swift in Sources */,
+				E2212FD1283AB5F50077AC2C /* RecentMessage.swift in Sources */,
+				E2212FD3283AB5FB0077AC2C /* ChatMessage.swift in Sources */,
 				E2910E5C283419930063F856 /* ImagePicker.swift in Sources */,
 				E2001D392836BA10000F8BF1 /* NewMessageView.swift in Sources */,
 				E21231E328355C0600A59EC8 /* MainMessagesView.swift in Sources */,

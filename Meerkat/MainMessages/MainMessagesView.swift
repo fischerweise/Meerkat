@@ -9,24 +9,6 @@ import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
 
-struct RecentMessage: Identifiable {
-    var id: String {documentId}
-    let documentId: String
-    let text, email: String
-    let fromId, toId: String
-    let profileImageURL: String
-    let timestamp: Timestamp
-    init(documentId: String, data: [String: Any]) {
-        self.documentId = documentId
-        self.text = data["text"] as? String ?? ""
-        self.fromId = data["fromId"] as? String ?? ""
-        self.toId = data["toId"] as? String ?? ""
-        self.profileImageURL = data["profileImageURL"] as? String ?? ""
-        self.email = data["email"] as? String ?? ""
-        self.timestamp = data["timestamp"] as? Timestamp ?? Timestamp(date: Date())
-    }
-}
-
 class MainMessagesViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var chatUser: ChatUser?
@@ -179,7 +161,7 @@ private var messagesView: some View {
                                 .multilineTextAlignment(.leading)
                         }
                         Spacer()
-                        Text("22d")
+                        Text("14m")
                             .font(.system(size: 14, weight: .semibold))
                     }
                 }
@@ -202,14 +184,14 @@ private var messagesView: some View {
             }
             .foregroundColor(.white)
             .padding(.vertical)
-                .background(Color.blue)
+                .background(Color.orange)
                 .cornerRadius(24)
                 .padding(.horizontal)
                 .shadow(radius: 15)
         }
         .fullScreenCover(isPresented: $shouldShowNewMessageScreen) {
             NewMessageView(didSelectNewUser: {user in
-                print(user.email)
+                print(user.email.replacingOccurrences(of: "@gmail.com", with: ""))
                 self.shouldNavigateToChatLogView.toggle()
                 self.chatUser = user
             })
