@@ -12,7 +12,7 @@ Meerkat - A Messaging App
 ### *Libraries*
 
 * I used *Google-Firebase* for messaging.
-* To download images, I used *SDWebImageSwiftUI.
+* To download images, I used *SDWebImageSwiftUI*.
 
 ### *Media*
 
