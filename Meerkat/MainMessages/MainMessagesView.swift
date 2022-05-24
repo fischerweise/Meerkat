@@ -8,6 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
+import FirebaseFirestoreSwift
 
 class MainMessagesViewModel: ObservableObject {
     @Published var errorMessage = ""
@@ -21,9 +22,12 @@ class MainMessagesViewModel: ObservableObject {
         fetchRecentMessages()
     }
     @Published var recentMessages = [RecentMessage]()
-    private func fetchRecentMessages() {
+    private var firestoreListener: ListenerRegistration?
+    func fetchRecentMessages() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-        FirebaseManager.shared.firestore.collection("recent_messages").document(uid).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
+        firestoreListener?.remove()
+        self.recentMessages.removeAll()
+        firestoreListener = FirebaseManager.shared.firestore.collection("recent_messages").document(uid).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
             if let error = error {
                 self.errorMessage = "Failed to listen for recent messages: \(error)"
                 print(error)
@@ -32,12 +36,16 @@ class MainMessagesViewModel: ObservableObject {
             querySnapshot?.documentChanges.forEach({ change in
                 let docId = change.document.documentID
                 if let index = self.recentMessages.firstIndex(where: { rm in
-                    return rm.documentId == docId
+                    return rm.id == docId
                 }) {
                     self.recentMessages.remove(at: index)
                 }
-                self.recentMessages.insert(.init(documentId: docId, data: change.document.data()), at: 0)
-//                self.recentMessages.append()
+                do {
+                    let rm = try change.document.data(as: RecentMessage.self)
+                    self.recentMessages.insert(rm, at: 0)
+                } catch {
+                    print(error)
+                }
             })
             
         }
@@ -132,6 +140,7 @@ struct MainMessagesView: View {
             LoginView(didCompleteLoginProcess: {
                 self.viewModel.isUserCurrentlyLoggedOut = false
                 self.viewModel.fetchCurrentUser()
+                self.viewModel.fetchRecentMessages()
             })
         }
     }
@@ -152,16 +161,18 @@ private var messagesView: some View {
                             .overlay(RoundedRectangle(cornerRadius: 64).stroke(Color.black, lineWidth: 2))
                             .shadow(radius: 5)
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(recentMessage.email)
+                            Text(recentMessage.username)
                                 .font(.system(size: 16, weight: .bold))
                                 .foregroundColor(Color(.label))
+                                .multilineTextAlignment(.leading)
                             Text(recentMessage.text)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color(.darkGray))
                                 .multilineTextAlignment(.leading)
                         }
                         Spacer()
-                        Text("14m")
+                        Text(recentMessage.timeAgo.description)
+                            .foregroundColor(Color(.label))
                             .font(.system(size: 14, weight: .semibold))
                     }
                 }
